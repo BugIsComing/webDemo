@@ -12,5 +12,8 @@ ${username!}
     <li>${loglist.createtime?string('yyyy-MM-dd')}</li>
 </#list>
 </ul>
+<ul>
+<img src = "static/images/login.jpg"/>
+</ul>
 </body>
 </html>

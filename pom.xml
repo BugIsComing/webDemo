@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <spring.version>3.1.0.RELEASE</spring.version>
+    <spring.version>5.0.0.RELEASE</spring.version>
     <aspectj.version>1.6.10</aspectj.version>
     <shiro.version>1.2.1</shiro.version>
     <jackson.version>1.7.3</jackson.version>
@@ -85,6 +85,12 @@
       <scope>runtime</scope>
     </dependency>
 
+    <!-- log4j -->
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.16</version>
+    </dependency>
 
     <!-- j2ee web spec -->
     <dependency>
@@ -104,6 +110,7 @@
       <version>2.0</version>
       <scope>provided</scope>
     </dependency>
+
     <!-- end j2ee web spec -->
   </dependencies>
   <build>

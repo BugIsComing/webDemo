@@ -4,10 +4,12 @@
 
 <web-app>
   <display-name>FreeMarkerDemo</display-name>
+
   <!-- 配置spring-->
   <servlet>
     <servlet-name>springServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--如果不显式指定这个初始化参数，需要在路径/WEB-INF下创建springServlet-servlet.xml-->
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath*:/springmvc-servlet.xml</param-value>
@@ -19,4 +21,6 @@
     <servlet-name>springServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
+
+
 </web-app>

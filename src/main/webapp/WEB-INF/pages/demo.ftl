@@ -13,6 +13,7 @@ ${username!}
 </#list>
 </ul>
 <ul>
+    <#--static前面不能加斜杠-->
 <img src = "static/images/login.jpg"/>
 </ul>
 </body>

@@ -14,7 +14,7 @@ import java.util.List;
  * @author ifly_lc
  */
 @Controller
-public class DemoController {
+public class AnnotationController {
     /**
      *  访问http://localhost:8989/webDemo/demo
      * @return a ModelAndView

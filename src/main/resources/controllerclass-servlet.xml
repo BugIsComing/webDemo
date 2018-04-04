@@ -29,6 +29,7 @@
     </bean>
 
     <!--这个bean必须添加，注意与BeanNameMappingHandlerMapping的区别-->
+    <!--最新的SpringMVC已经放弃ControllerClassNameHandlerMapping-->
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" />
     <bean class="com.lc.controller.ControllerClassNameMappingController" ></bean>
 </beans>

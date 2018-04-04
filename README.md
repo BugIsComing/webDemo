@@ -1,2 +1,17 @@
 # webDemo
-学习SpringMVC源码的demo
+学习SpringMVC源码的demo,练习使用SpringMVC中的四种HandlerMapping
+本demo中主要学习SpringMVC中BeanNameUrlHandlerMapping、RequestMappingHandlerMapping、SimpleUrlHandlerMapping、ControllerClassNameHandlerMapping的简单实例
+1、web.xml  springmvc-servlet.xml  AnnotationController.java 三个文件是RequestMappingHandlerMapping的实例
+RequestMappingHandlerMapping就是通过注解@Controller，@RequestMapping等方式指明controller
+2、web1.xml beanName-servlet.xml  BeanNameMappingController.java 三个文件是BeanNameUrlHandlerMapping的实例
+启动之前将web1.xml改为web.xml,启动后输入对应的连接
+http://localhost:8989/webDemo/welcome.ftl
+http://localhost:8989/webDemo/welcome1.ftl
+http://localhost:8989/webDemo/welcomeLC.ftl
+http://localhost:8989/webDemo/
+输入连接的规则查看beanName-servlet.xml中bean的name
+3、web2.xml controllerclass-servlet.xml ControllerClassNameMappingController.java 三个文件是ControllerClassNameHandlerMapping的实例
+ControllerClassNameHandlerMapping中，将Controller类的类名作为url mapping
+浏览器访问时输入http://localhost:8989/webDemo/controllerclassnamemapping
+4、web3.xml simpleurl-servlet.xml SimpleUrlMappingController.java 三个文件是SimpleUrlHandlerMapping的实例
+http://localhost:8989/webDemo/welcome.ftl

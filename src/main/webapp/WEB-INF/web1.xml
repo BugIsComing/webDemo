@@ -7,21 +7,20 @@
 
   <!-- 配置spring，通过RequestMapping-->
   <servlet>
-    <servlet-name>springServlet</servlet-name>
+    <servlet-name>beanNameServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!--如果不显式指定这个初始化参数，需要在路径/WEB-INF下创建springServlet-servlet.xml-->
     <init-param>
       <param-name>contextConfigLocation</param-name>
-      <param-value>classpath*:/springmvc-servlet.xml</param-value>
+      <param-value>classpath*:/beanName-servlet.xml</param-value>
       <!--<param-value>classpath*:/dispatcherServlet-servlet.xml</param-value>-->
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <!--设置配置文件的拦截URL-->
   <servlet-mapping>
-    <servlet-name>springServlet</servlet-name>
+    <servlet-name>beanNameServlet</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
 
 </web-app>

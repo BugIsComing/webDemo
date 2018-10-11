@@ -9,7 +9,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <spring.version>5.0.0.RELEASE</spring.version>
+    <spring.version>5.0.8.RELEASE</spring.version>
     <aspectj.version>1.6.10</aspectj.version>
     <shiro.version>1.2.1</shiro.version>
     <jackson.version>1.7.3</jackson.version>
@@ -110,6 +110,13 @@
       <version>2.0</version>
       <scope>provided</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.17</version>
+    </dependency>
+
 
     <!-- end j2ee web spec -->
   </dependencies>

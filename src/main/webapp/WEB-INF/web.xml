@@ -5,6 +5,8 @@
 <web-app>
   <display-name>FreeMarkerDemo</display-name>
 
+  <!--servlet和context-param的加载顺序是先加载context-param，再加载servlet，因为context-param中定义的上下文对所有servlet有效，而servlet中的init-param只对该servlet有效-->
+
   <!-- 配置spring，HandlerMapping通过RequestMappingHandlerMapping-->
   <servlet>
     <servlet-name>springServlet</servlet-name>

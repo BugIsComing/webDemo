@@ -1,29 +1,48 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<?xml version="1.0" encoding="UTF-8"?>
 
-<web-app>
-  <display-name>FreeMarkerDemo</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <display-name>FreeMarkerDemo</display-name>
 
-  <!--servlet和context-param的加载顺序是先加载context-param，再加载servlet，因为context-param中定义的上下文对所有servlet有效，而servlet中的init-param只对该servlet有效-->
+    <!--servlet和context-param的加载顺序是先加载context-param，再加载servlet，因为context-param中定义的上下文对所有servlet有效，而servlet中的init-param只对该servlet有效-->
 
-  <!-- 配置spring，HandlerMapping通过RequestMappingHandlerMapping-->
-  <servlet>
-    <servlet-name>springServlet</servlet-name>
-    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-    <!--如果不显式指定这个初始化参数，需要在路径/WEB-INF下创建springServlet-servlet.xml-->
-    <init-param>
-      <param-name>contextConfigLocation</param-name>
-      <param-value>classpath*:/springmvc-servlet.xml</param-value>
-      <!--<param-value>classpath*:/dispatcherServlet-servlet.xml</param-value>-->
-    </init-param>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <!--设置配置文件的拦截URL-->
-  <servlet-mapping>
-    <servlet-name>springServlet</servlet-name>
-    <url-pattern>/</url-pattern>
-  </servlet-mapping>
+    <!-- 配置spring，HandlerMapping通过RequestMappingHandlerMapping-->
+    <servlet>
+        <servlet-name>springServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--如果不显式指定这个初始化参数，需要在路径/WEB-INF下创建springServlet-servlet.xml-->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath*:/springmvc-servlet.xml</param-value>
+            <!--<param-value>classpath*:/dispatcherServlet-servlet.xml</param-value>-->
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--设置配置文件的拦截URL-->
+    <servlet-mapping>
+        <servlet-name>springServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <!--filter的执行顺序按照其定义顺序进行执行-->
+    <filter>
+        <filter-name>myFilter</filter-name>
+        <filter-class>com.lc.filter.MyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>myFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>httpRequestFilter</filter-name>
+        <filter-class>com.lc.filter.HttpRequestFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>httpRequestFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 
 </web-app>
